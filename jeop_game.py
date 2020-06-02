@@ -1,12 +1,18 @@
 import csv
 with open('jeop_quest.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile, delimiter= '\t')
+    reader.fieldnames = [field.strip().lower() for field in reader.fieldnames]
+    # writer??? fieldnames = ['Show_Number', 'Air_Date', 'Round', 'Category', 'Value', 'Question', 'Answer']
     #rows = list(reader)
     for row in reader:
-        print(row['Round'], row['Value'])
+        # print(row.keys())
+        # print(row.items())
+       
+        
+        print(row['category'], row['value'], row['question'])
 
-        print(row.keys)
-        print(row.items)
+        
+    
 
 
  
